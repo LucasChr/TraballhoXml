@@ -3,7 +3,6 @@ package model;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -13,20 +12,16 @@ public class Aluno {
 	@XmlAttribute
 	private String nome;
 
-	@XmlElement
+	@XmlElementWrapper(name = "disciplinas")
 	private List<Disciplina> disciplinas;
-
-	@XmlElement
-	private List<Nota> notas;
 
 	public Aluno() {
 	}
 
-	public Aluno(String nome, List<Disciplina> disciplinas, List<Nota> notas) {
+	public Aluno(String nome, List<Disciplina> disciplinas) {
 		super();
 		this.nome = nome;
 		this.disciplinas = disciplinas;
-		this.notas = notas;
 	}
 
 	public String getNome() {
@@ -36,9 +31,4 @@ public class Aluno {
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
-
-	public List<Nota> getNotas() {
-		return notas;
-	}
-
 }
