@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 
 public class Notas {
 
-	@XmlElementWrapper(name = "listaDeNotas")
+	@XmlElementWrapper(name = "notas")
 	private List<Nota> notas;
 
 }

@@ -8,6 +8,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Disciplinas {
 
-	@XmlElementWrapper(name = "listaDeDisciplinas")
+	@XmlElementWrapper(name = "disciplinas")
 	private List<Disciplina> disciplinas;
 }

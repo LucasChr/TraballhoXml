@@ -8,6 +8,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Turma {
 
-	@XmlElementWrapper(name = "listaDeAlunos")
+	@XmlElementWrapper
 	private List<Aluno> alunos;
+
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
 }

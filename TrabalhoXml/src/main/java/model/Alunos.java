@@ -3,13 +3,12 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Alunos {
 
-	@XmlElementWrapper(name = "listaDeAlunos")
+	
 	private List<Aluno> alunos;
 
 	public void addAluno(Aluno aluno) {
@@ -19,8 +18,8 @@ public class Alunos {
 		alunos.add(aluno);
 	}
 
-	public List<Aluno> getAlunos() {
+	public List<Aluno> getPessoas() {
 		return alunos;
 	}
-
+	
 }

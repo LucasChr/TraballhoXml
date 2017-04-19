@@ -13,10 +13,10 @@ public class Aluno {
 	@XmlAttribute
 	private String nome;
 
-	@XmlElementWrapper(name = "listaDeDisciplinas")
+	@XmlElement
 	private List<Disciplina> disciplinas;
 
-	@XmlElementWrapper(name = "listaDeNotas")
+	@XmlElement
 	private List<Nota> notas;
 
 	public Aluno() {
