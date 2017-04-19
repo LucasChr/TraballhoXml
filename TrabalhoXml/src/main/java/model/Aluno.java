@@ -2,7 +2,9 @@ package model;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -13,6 +15,7 @@ public class Aluno {
 	private String nome;
 
 	@XmlElementWrapper(name = "disciplinas")
+	@XmlAnyElement(lax = true)
 	private List<Disciplina> disciplinas;
 
 	public Aluno() {

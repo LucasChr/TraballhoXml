@@ -16,20 +16,19 @@ import org.junit.Test;
 import converter.AlunoXmlConverter;
 import converter.TurmaXmlConverter;
 import model.Aluno;
-import model.Alunos;
 import model.Turma;
 
 public class AlunoConverterTest {
 
-	File file = new File("/home/lucas/Downloads/boletimTurma.xml");
-	
-	@Test
+	File file = new File("/opt/boletimTurma.xml");
+
+	/*@Test
 	public void deveConverterParaTurma() {
 		TurmaXmlConverter converter = new TurmaXmlConverter();
 		Turma turma = converter.toObject(file);
 		assertNotNull(turma);
 		System.out.println(turma.getAlunos());
-	}
+	}*/
 
 	@Test
 	public void deveConverterParaXML() throws URISyntaxException {
@@ -50,14 +49,21 @@ public class AlunoConverterTest {
 	 * System.out.println(xml); }
 	 * 
 	 */
-	/*@Test
-	public void deveConverterAlunosParaXML() throws URISyntaxException {
-		AlunoXmlConverter converter = new AlunoXmlConverter();
-		Aluno aluno = converter.toObject(new File("/home/lucas/Downloads/boletimTurma.xml"));
-		Alunos alunos = new Alunos();
-		alunos.addAluno(aluno);
-		String xml = converter.toXML(alunos);
-		assertFalse(xml.isEmpty());
-		System.out.println(xml);
-	}*/
+	/*
+	 * @Test public void deveConverterAlunosParaXML() throws URISyntaxException
+	 * { AlunoXmlConverter converter = new AlunoXmlConverter(); Aluno aluno =
+	 * converter.toObject(new File("/home/lucas/Downloads/boletimTurma.xml"));
+	 * Alunos alunos = new Alunos(); alunos.addAluno(aluno); String xml =
+	 * converter.toXML(alunos); assertFalse(xml.isEmpty());
+	 * System.out.println(xml); }
+	 */
+/*
+	@Test
+	public void deveConverter() {
+		TurmaXmlConverter converter = new TurmaXmlConverter();
+		Turma turma = converter.toObject(file);
+		assertNotNull(turma);
+		System.out.println(turma);
+	}
+*/
 }
