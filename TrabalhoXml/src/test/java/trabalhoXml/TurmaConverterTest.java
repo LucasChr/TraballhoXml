@@ -13,12 +13,13 @@ import java.util.List;
 
 import org.junit.Test;
 
-import converter.AlunoXmlConverter;
 import converter.TurmaXmlConverter;
 import model.Aluno;
+import model.Disciplina;
+import model.Nota;
 import model.Turma;
 
-public class AlunoConverterTest {
+public class TurmaConverterTest {
 
 	File file = new File("/opt/boletimTurma.xml");
 
@@ -34,6 +35,23 @@ public class AlunoConverterTest {
 	public void deveConverterParaXML() throws URISyntaxException {
 		TurmaXmlConverter converter = new TurmaXmlConverter();
 		Turma turma = converter.toObject(file);
+		for(int i=0;i<=turma.getAlunos().size();i++){
+			Aluno a = turma.getAlunos().get(i);
+			String nome = a.getNome();
+			
+			for(int d=0;d<=a.getDisciplinas().size();d++){
+				Disciplina disc = a.getDisciplinas().get(d);
+				String materia = disc.getNome();
+				Double soma = null;
+				Integer numNotas = disc.getNotas().size();
+				for(int n=0;n<=disc.getNotas().size();n++){
+					Nota not = disc.getNotas().get(n);
+					Double nota = not.getValor();
+					soma += nota;
+				}
+				
+			}
+		}
 		String xml = converter.toXML(turma);
 		assertFalse(xml.isEmpty());
 		System.out.println(xml);

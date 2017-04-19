@@ -18,4 +18,8 @@ public class Nota {
 		super();
 	}
 
+	public Double getValor() {
+		return valor;
+	}
+
 }
