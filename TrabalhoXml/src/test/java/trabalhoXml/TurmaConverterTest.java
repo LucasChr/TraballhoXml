@@ -23,19 +23,19 @@ public class TurmaConverterTest {
 		List<Aluno> t = turma.getAlunos();
 		// System.out.println(t.size());
 		String nome = null;
-		String materia = null;
+		String materia2 = null;
 		Double soma = 0.0;
-		String auxMateria = null;
-		Double media = 0.0;
+		String materia1 = null;
+		Double mediaMateria2 = 0.0;
 		Double mediaGeral = 0.0;
-		Double auxMedia = 0.0;
-		int num2 = t.size();
-		for (int i = 0; i <= num2; i++) {
+		Double mediaMateria1 = 0.0;
+		int count = t.size();
+		for (int i = 0; i <= count; i++) {
 			nome = t.get(i).getNome();
 			List<Disciplina> d = t.get(i).getDisciplinas();
 			Integer num1 = d.size();
 			for (int m = 0; m < num1; m++) {
-				materia = d.get(m).getNome();
+				materia2 = d.get(m).getNome();
 				List<Nota> n = d.get(m).getNotas();
 				Integer num = n.size();
 				for (int a = 0; a < num; a++) {
@@ -43,16 +43,15 @@ public class TurmaConverterTest {
 					soma = soma + aux;
 				}
 				if (m <= 0) {
-					auxMateria = materia;
-					auxMedia = soma / num1;
+					materia1 = materia2;
+					mediaMateria1 = soma / num1;
 				}
-				media = soma / num1;
+				mediaMateria2 = soma / num1;
 				soma = 0.0;
 			}
-			mediaGeral = (auxMedia + media) / num2;
-			System.out.println(nome + " - " + auxMateria + " - " + auxMedia + " - " + materia + " - " + media
-					+ " - Média geral: " + mediaGeral);
+			mediaGeral = (mediaMateria1 + mediaMateria2) / count;
+			System.out.println(nome + " - " + materia1 + " - " + mediaMateria1 + " - " + materia2 + " - "
+					+ mediaMateria2 + " - Média geral: " + mediaGeral);
 		}
-
 	}
 }
