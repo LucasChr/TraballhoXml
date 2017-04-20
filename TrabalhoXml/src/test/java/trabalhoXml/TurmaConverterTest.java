@@ -33,20 +33,20 @@ public class TurmaConverterTest {
 		for (int i = 0; i <= count; i++) {
 			nome = t.get(i).getNome();
 			List<Disciplina> d = t.get(i).getDisciplinas();
-			Integer num1 = d.size();
-			for (int m = 0; m < num1; m++) {
+			Integer count2 = d.size();
+			for (int m = 0; m < count2; m++) {
 				materia2 = d.get(m).getNome();
 				List<Nota> n = d.get(m).getNotas();
-				Integer num = n.size();
-				for (int a = 0; a < num; a++) {
+				Integer count3 = n.size();
+				for (int a = 0; a < count3; a++) {
 					Double aux = n.get(a).getValor();
 					soma = soma + aux;
 				}
 				if (m <= 0) {
 					materia1 = materia2;
-					mediaMateria1 = soma / num1;
+					mediaMateria1 = soma / count2;
 				}
-				mediaMateria2 = soma / num1;
+				mediaMateria2 = soma / count2;
 				soma = 0.0;
 			}
 			mediaGeral = (mediaMateria1 + mediaMateria2) / count;
